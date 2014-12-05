@@ -1,9 +1,9 @@
+export EDITOR=vim
 [[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
 PATH=~/Downloads/arcanist/bin:/usr/local/share/node_modules/.bin:$PATH
+export GOPATH=$HOME/server
 
 source ~/dot/alias
-
-export PS1="\[\e[01;37m\][\[\e[0m\]\[\e[00;37m\]\W\[\e[0m\]\[\e[01;37m\]]\[\e[0m\]\[\e[00;37m\] \[\e[0m\]"
 
 # get current branch in git repo
 function parse_git_branch() {
@@ -12,6 +12,7 @@ function parse_git_branch() {
 	then
 		STAT=`parse_git_dirty`
 		echo "|${BRANCH}${STAT}"
+		export STAT
 	else
 		echo ""
 	fi
@@ -53,3 +54,4 @@ function parse_git_dirty {
 }
 
 export PS1="❨\W\`parse_git_branch\`❩ "
+
