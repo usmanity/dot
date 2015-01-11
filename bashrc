@@ -1,7 +1,7 @@
 export EDITOR=vim
 [[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
-PATH=~/Downloads/arcanist/bin:/usr/local/share/node_modules/.bin:$PATH
 export GOPATH=$HOME/server
+PATH=~/Downloads/arcanist/bin:/usr/local/share/node_modules/.bin:$PATH:$GOPATH/bin
 
 source ~/dot/alias
 
