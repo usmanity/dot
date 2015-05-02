@@ -1,6 +1,7 @@
 alias gst='git status'
 alias gco='git checkout'
-alias song='youtube-dl -x --audio-format mp3 -o "%(title)s.%(ext)s"'
 alias ggpull="git pull origin $(git branch | sed -n -e 's/^\* \(.*\)/\1/p')"
 alias ggpush="git push origin $(git branch | sed -n -e 's/^\* \(.*\)/\1/p')"
+
 alias sc='cd ~/Dropbox/Music/sc; python ~/development/local/sc.py -v'
+alias song='youtube-dl -x --audio-format mp3 -o "%(title)s.%(ext)s"'
