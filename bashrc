@@ -1,6 +1,6 @@
 export EDITOR=vim
 [[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
-export GOPATH=$HOME/server
+export GOPATH=$HOME/workspace/server
 PATH=~/Downloads/arcanist/bin:/usr/local/share/node_modules/.bin:$PATH:$GOPATH/bin
 
 source ~/dot/alias
@@ -55,3 +55,4 @@ function parse_git_dirty {
 
 export PS1="❨\W\`parse_git_branch\`❩ "
 
+export PATH=$PATH:/usr/local/opt/go/libexec/bin:~/workspace/arcanist/bin/
