@@ -1,0 +1,16 @@
+# Keybindings require three things to be fully defined: A selector that is
+# matched against the focused element, the keystroke and the command to
+# execute.
+#
+# Below is a basic keybinding which registers on all platforms by applying to
+# the root workspace element.
+
+# For more detailed documentation see
+# https://atom.io/docs/latest/advanced/keymaps
+'atom-workspace':
+  'ctrl-alt-d': 'php-debug:toggleDebugging'
+  'alt-f9': 'php-debug:toggleBreakpoint'
+  'alt-f5': 'php-debug:run'
+  'alt-f6': 'php-debug:stepOver'
+  'alt-f7': 'php-debug:stepIn'
+  'alt-f8': 'php-debug:stepOut'
