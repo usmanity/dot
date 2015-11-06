@@ -17,19 +17,28 @@
 
 // style the background color of the tree view
 .tree-view {
-  // background-color: whitesmoke;
+	font-family: 'fira mono';
 }
 
 // style the background and foreground colors on the atom-text-editor-element itself
 atom-text-editor {
-  // color: white;
-  // background-color: hsl(180, 24%, 12%);
+	.indent-guide {
+		color: rgba(202, 208, 208, 0.3);
+	}
+	&::shadow .cursor-line {
+		// border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+		background-color: rgba(202, 208, 208, 0.15);
+		// margin-bottom: -1px;
+		.indent-guide:first-child {
+			// box-shadow: inset 2px 0 0 blue;
+		}
+		.wrap-guide {
+			background-color: rgba(202, 208, 208, 0.3);
+		}
+	}
 }
 
 // To style other content in the text editor's shadow DOM, use the ::shadow expression
 atom-text-editor::shadow .cursor {
   // border-color: red;
-}
-atom-text-editor .indent-guide, :host .indent-guide {
-	color: rgba(202, 208, 208, 0.3);
 }

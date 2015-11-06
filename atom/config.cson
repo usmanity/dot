@@ -18,7 +18,6 @@
     showIndentGuide: true
     softTabs: false
     tabType: "hard"
-    fontSize: 14
     fontFamily: "'fira mono'"
   "atom-wsync":
     localRepoBasePath: "/Users/muhammad/workspace/weebly"
