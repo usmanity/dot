@@ -1,0 +1,19 @@
+(function() {
+  var test;
+
+  test = {
+    sub: {
+      item: 1234,
+      show: function() {
+        return console.log(this.item);
+      }
+    }
+  };
+
+  test.sub.show();
+
+}).call(this);
+
+//# sourceMappingURL=data:application/json;base64,ewogICJ2ZXJzaW9uIjogMywKICAiZmlsZSI6ICIiLAogICJzb3VyY2VSb290IjogIiIsCiAgInNvdXJjZXMiOiBbCiAgICAiL1VzZXJzL211aGFtbWFkLy5hdG9tL3BhY2thZ2VzL2F0b20tc3luYy90ZXN0LmNvZmZlZSIKICBdLAogICJuYW1lcyI6IFtdLAogICJtYXBwaW5ncyI6ICJBQUFBO0FBQUEsTUFBQSxJQUFBOztBQUFBLEVBQUEsSUFBQSxHQUNJO0FBQUEsSUFBQSxHQUFBLEVBQ0k7QUFBQSxNQUFBLElBQUEsRUFBTSxJQUFOO0FBQUEsTUFDQSxJQUFBLEVBQU0sU0FBQSxHQUFBO2VBQ0YsT0FBTyxDQUFDLEdBQVIsQ0FBWSxJQUFDLENBQUEsSUFBYixFQURFO01BQUEsQ0FETjtLQURKO0dBREosQ0FBQTs7QUFBQSxFQU1BLElBQUksQ0FBQyxHQUFHLENBQUMsSUFBVCxDQUFBLENBTkEsQ0FBQTtBQUFBIgp9
+
+//# sourceURL=/Users/muhammad/.atom/packages/atom-sync/test.coffee
