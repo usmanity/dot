@@ -1,1 +1,0 @@
-{"context-menu":{"atom-text-editor":[{"label":"Wsync: Sync Project","command":"wsync:sync"},{"label":"Wsync: Compile Sass","command":"wsync:compile-path-sass"}]},"menu":[{"label":"Packages","submenu":[{"label":"Wsync","submenu":[{"label":"Sync Project","command":"wsync:sync-project"},{"label":"Compile path Sass","command":"wsync:compile-path-sass"}]}]}]}
