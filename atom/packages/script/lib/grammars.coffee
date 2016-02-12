@@ -5,6 +5,11 @@ _ = require 'underscore'
 GrammarUtils = require '../lib/grammar-utils'
 
 module.exports =
+  '1C (BSL)':
+    'File Based':
+      command: "oscript"
+      args: (context) -> ['-encoding=utf-8', context.filepath]
+
   AppleScript:
     'Selection Based':
       command: 'osascript'
@@ -49,7 +54,7 @@ module.exports =
   CoffeeScript:
     "Selection Based":
       command: "coffee"
-      args: (context)  -> ['-e', context.getCode()]
+      args: (context) -> GrammarUtils.CScompiler.args.concat [context.getCode()]
     "File Based":
       command: "coffee"
       args: (context) -> [context.filepath]
@@ -57,7 +62,7 @@ module.exports =
   'CoffeeScript (Literate)':
     "Selection Based":
       command: "coffee"
-      args: (context)  -> ['-e', context.getCode()]
+      args: (context) -> GrammarUtils.CScompiler.args.concat [context.getCode()]
     "File Based":
       command: "coffee"
       args: (context) -> [context.filepath]
@@ -142,10 +147,14 @@ module.exports =
 
   Java:
     "File Based":
-      command: "bash"
+      command: if GrammarUtils.OperatingSystem.isWindows() then "cmd" else "bash"
       args: (context) ->
         className = context.filename.replace /\.java$/, ""
-        args = ['-c', "javac -d /tmp '#{context.filepath}' && java -cp /tmp #{className}"]
+        args = []
+        if GrammarUtils.OperatingSystem.isWindows()
+          args = ["/c javac -Xlint #{context.filename} && start cmd /k java #{className}"]
+        else
+          args = ['-c', "javac -d /tmp '#{context.filepath}' && java -cp /tmp #{className}"]
         return args
 
   JavaScript:
@@ -164,7 +173,7 @@ module.exports =
       command: "babel-node"
       args: (context) -> [context.filepath]
 
-  "JavaScript for Automation":
+  "JavaScript for Automation (JXA)":
     "Selection Based":
       command: "osascript"
       args: (context)  -> ['-l', 'JavaScript', '-e', context.getCode()]
@@ -240,6 +249,14 @@ module.exports =
     "File Based":
       command: "lua"
       args: (context) -> [context.filepath]
+
+  MagicPython:
+    "Selection Based":
+      command: "python"
+      args: (context)  -> ['-u', '-c', context.getCode()]
+    "File Based":
+      command: "python"
+      args: (context) -> ['-u', context.filepath]
 
   MoonScript:
     "Selection Based":
@@ -339,6 +356,14 @@ module.exports =
       command: "perl6"
       args: (context) -> [context.filepath]
 
+  "Perl 6 FE":
+    "Selection Based":
+      command: "perl6"
+      args: (context)  -> ['-e', context.getCode()]
+    "File Based":
+      command: "perl6"
+      args: (context) -> [context.filepath]
+
   PowerShell:
     "File Based":
       command: "powershell"
@@ -347,12 +372,18 @@ module.exports =
   Python:
     "Selection Based":
       command: "python"
-      args: (context)  -> ['-c', context.getCode()]
+      args: (context)  -> ['-u', '-c', context.getCode()]
     "File Based":
       command: "python"
-      args: (context) -> [context.filepath]
+      args: (context) -> ['-u', context.filepath]
 
   R:
+    "Selection Based":
+      command: "Rscript"
+      args: (context) ->
+        code = context.getCode()
+        file = GrammarUtils.R.createTempFileWithCode(code)
+        [file]
     "File Based":
       command: "Rscript"
       args: (context) -> [context.filepath]
@@ -406,7 +437,7 @@ module.exports =
   Rust:
     "File Based":
       command: "bash"
-      args: (context) -> ['-c', "rustc " + context.filepath + " -o /tmp/rs.out && /tmp/rs.out"]
+      args: (context) -> ['-c', "rustc '#{context.filepath}' -o /tmp/rs.out && /tmp/rs.out"]
 
   Makefile:
     "Selection Based":
@@ -415,6 +446,14 @@ module.exports =
     "File Based":
       command: "make"
       args: (context) -> ['-f', context.filepath]
+
+  Sage:
+    "Selection Based":
+      command: "sage"
+      args: (context) -> ['-c', context.getCode()]
+    "File Based":
+      command: "sage"
+      args: (context) -> [context.filepath]
 
   Sass:
     "File Based":
@@ -444,10 +483,10 @@ module.exports =
 
   "Shell Script":
     "Selection Based":
-      command: "bash"
+      command: process.env.SHELL
       args: (context)  -> ['-c', context.getCode()]
     "File Based":
-      command: "bash"
+      command: process.env.SHELL
       args: (context) -> [context.filepath]
 
   "Shell Script (Fish)":
@@ -457,6 +496,14 @@ module.exports =
     "File Based":
       command: "fish"
       args: (context) -> [context.filepath]
+
+  "SQL (PostgreSQL)":
+    "Selection Based":
+      command: "psql"
+      args: (context) -> ['-c', context.getCode()]
+    "File Based":
+      command: "psql"
+      args: (context) -> ['-f', context.filepath]
 
   "Standard ML":
     "File Based":
@@ -469,12 +516,12 @@ module.exports =
       args: (context) ->
         file = GrammarUtils.Nim.findNimProjectFile(context.filepath)
         path = GrammarUtils.Nim.projectDir(context.filepath)
-        ['-c', 'cd "' + path + '" && nim c --colors:on --hints:off --parallelBuild:1 -r "' + file + '" 2>&1']
+        ['-c', 'cd "' + path + '" && nim c --hints:off --parallelBuild:1 -r "' + file + '" 2>&1']
 
   Swift:
     "File Based":
-      command: "xcrun"
-      args: (context) -> ['swift', context.filepath]
+      command: "swift"
+      args: (context) -> [context.filepath]
 
   TypeScript:
     "Selection Based":
@@ -493,3 +540,11 @@ module.exports =
     "File Based":
       command: "dart"
       args: (context) -> [context.filepath]
+
+  Octave:
+    "Selection Based":
+      command: "octave"
+      args: (context) -> ['-p', context.filepath.replace(/[^\/]*$/, ''), '--eval', context.getCode()]
+    "File Based":
+      command: "octave"
+      args: (context) -> ['-p', context.filepath.replace(/[^\/]*$/, ''), context.filepath]

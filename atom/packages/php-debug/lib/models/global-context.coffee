@@ -64,6 +64,15 @@ class GlobalContext
     }
     @notifyWatchpointsChange()
 
+  removeWatchpoint: (watchpoint) ->
+    removed = helpers.arrayRemove(@watchpoints, watchpoint)
+    if removed
+      data = {
+        removed: [removed]
+      }
+      @notifyWatchpointsChange()
+      return removed
+
   getBreakpoints: ->
     return @breakpoints
 
@@ -113,11 +122,23 @@ class GlobalContext
   notifyContextUpdate: (data) ->
     @emitter.emit 'php-debug.contextUpdate', data
 
+  onStackChange: (callback) ->
+    @emitter.on 'php-debug.stackChange', callback
+
+  notifyStackChange: (data) ->
+    @emitter.emit 'php-debug.stackChange', data
+
   onSessionEnd: (callback) ->
     @emitter.on 'php-debug.sessionEnd', callback
 
   notifySessionEnd: (data) ->
     @emitter.emit 'php-debug.sessionEnd', data
+    
+  onSocketError: (callback) ->
+    @emitter.on 'php-debug.socketError', callback
+
+  notifySocketError: (data) ->
+    @emitter.emit 'php-debug.socketError', data
 
   onSessionStart: (callback) ->
     @emitter.on 'php-debug.sessionStart', callback
