@@ -5,20 +5,6 @@
 @import "ui-variables";
 
 .header-view {
-  position: fixed;
-  width: 100%;
-  z-index:10;
-  position:relative;
-
-
-  .heading-close {
-    color: @text-color-highlight;
-  }
-
-  .heading-title {
-    padding-left: 6px;
-  }
-
   .heading-status {
     padding-left: 9px;
   }
@@ -40,13 +26,51 @@
   }
 }
 
-.script-view {
-  overflow: scroll;
-  max-height: 300px;
-  height: auto;
-  margin-bottom: 0px;
+.options-view {
+  table {
+    width: 100%;
+    margin-top: 5px;
 
-  .panel-body pre{
+    td {
+      padding: 5px;
+      vertical-align: middle;
+
+      input {
+        width: 100%;
+        color: @text-color;
+        height: @component-line-height;
+        line-height: @component-line-height;
+        background-color: @button-background-color;
+        border-radius: @component-border-radius;
+        border: 1px solid @input-border-color;
+        padding-left: 0.8rem;
+      }
+      input:focus {
+        color: @text-color-highlight;
+        background-color: @button-background-color-hover;
+      }
+    }
+
+    td:first-child {
+      width: 15rem;
+      text-align: right;
+    }
+  }
+
+  .buttons {
+    padding: 5px;
+
+    .cancel {
+      float: left;
+    }
+    .run {
+      float: right;
+    }
+  }
+}
+
+.script-view {
+  .panel-body pre {
     background: @tool-panel-background-color;
     color: @text-color;
   }

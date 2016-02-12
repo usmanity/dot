@@ -1,4 +1,5 @@
 {View} = require 'atom-space-pen-views'
+helpers        = require '../helpers'
 module.exports =
 class ContextVariableScalarView extends View
   @content: (params) =>

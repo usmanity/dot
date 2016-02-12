@@ -1,4 +1,9 @@
-# Script [![Build Status](http://img.shields.io/travis/rgbkrk/atom-script.svg?style=flat)](https://travis-ci.org/rgbkrk/atom-script)
+# Script
+
+[![Build Status](http://img.shields.io/travis/rgbkrk/atom-script.svg?style=flat)](https://travis-ci.org/rgbkrk/atom-script)
+
+[![Support via Gratipay](https://cdn.rawgit.com/gratipay/gratipay-badge/2.3.0/dist/gratipay.svg)](https://gratipay.com/rgbkrk/)
+
 **Run code in Atom!**
 
 Run scripts based on file name, a selection of code, or by line number.
@@ -7,8 +12,9 @@ Run scripts based on file name, a selection of code, or by line number.
 
 Currently supported grammars are:
 
+  * 1C (BSL)
   * AppleScript
-  * Bash
+  * Bash <sup>[**](#double-asterisk)</sup>
   * Behat Feature
   * C <sup>[*](#asterisk)</sup><sup>[‡](#double-dagger)</sup>
   * C++ <sup>[*](#asterisk)</sup><sup>[‡](#double-dagger)</sup>
@@ -26,7 +32,7 @@ Currently supported grammars are:
   * Go <sup>[*](#asterisk)</sup>
   * Groovy
   * Haskell
-  * Java
+  * Java <sup>[***](#triple-asterisk)</sup>
   * Javascript
   * [JavaScript for Automation](https://developer.apple.com/library/mac/releasenotes/InterapplicationCommunication/RN-JavaScriptForAutomation/Articles/Introduction.html) (JXA)
   * Julia
@@ -40,7 +46,7 @@ Currently supported grammars are:
   * Makefile
   * MoonScript
   * MongoDB
-  * [NCL](http://www.ncl.ucar.edu/)<sup>[#](#hash)</sup>
+  * [NCL](http://ncl.ucar.edu)<sup>[#](#hash)</sup>
   * newLISP
   * Nim (and NimScript)
   * NSIS
@@ -51,6 +57,7 @@ Currently supported grammars are:
   * Perl
   * Perl 6
   * PHP
+  * PostgreSQL <sup>[§](#section)</sup>
   * Python
   * RSpec
   * Racket
@@ -58,11 +65,15 @@ Currently supported grammars are:
   * Ruby
   * Ruby on Rails
   * Rust
+  * Sage
   * Sass/SCSS <sup>[*](#asterisk)</sup>
   * Scala
+  * Shell Script <sup>[**](#double-asterisk)</sup>
   * Swift
   * TypeScript
   * Dart
+  * Octave
+  * Zsh <sup>[**](#double-asterisk)</sup>
 
 **NOTE**: Some grammars may require you to install [a custom language package](https://atom.io/search?utf8=✓&q=language).
 
@@ -83,6 +94,16 @@ You only have to add a few lines in a PR to support another.
 <a name="hash"></a><sup>#</sup> NCL scripts must end with `exit` command for file based runs
 
 <a name="two-daggers"></a><sup>††</sup> Requires the panzer pandoc wrapper https://github.com/msprev/panzer and the pandoc-flavored-markdown language package in Atom https://atom.io/packages/language-pfm
+
+<a name="section"></a><sup>§</sup> Requires the atom-language-pgsql package in
+Atom https://atom.io/packages/language-pgsql.  Connects as user `$PGUSER` to
+database `$PGDATABASE`. Both default to the operating system's user name and both
+can be set in the process environment or in Atom's `init.coffee` script:
+`process.env.PGUSER = ⟨username⟩` and `process.env.PGDATABASE = ⟨database name⟩`.
+
+<a name="double-asterisk"></a><sup>\**</sup> The shell used is based on your default `$SHELL` environment variable.
+
+<a name="triple-asterisk"></a><sup>\***</sup> Windows users should manually add jdk path (...\jdk1.x.x_xx\bin) to their system environment variables.
 
 ## Installation
 
@@ -129,7 +150,7 @@ clipboard, allowing you to paste it into the editor.
 ### Command and shortcut reference
 
 | Command                    | Mac OS X                            | Linux/Windows               | Notes                                                                         |
-|----------------------------|-------------------------------------|-----------------------------|-------------------------------------------------------------------------------|
+|:---------------------------|:------------------------------------|:----------------------------|:------------------------------------------------------------------------------|
 | Script: Run                | <kbd>cmd-i</kbd>                    | <kbd>shift-ctrl-b</kbd>     | If text is selected a "Selection Based" is used instead of a "File Based" run |
 | Script: Run by Line Number | <kbd>shift-cmd-j</kbd>              | <kbd>shift-ctrl-j</kbd>     | If text is selected the line number will be the last                          |
 | Script: Run Options        | <kbd>shift-cmd-i</kbd>              | <kbd>shift-ctrl-alt-o</kbd> | Runs the selection or whole file with the given options                       |

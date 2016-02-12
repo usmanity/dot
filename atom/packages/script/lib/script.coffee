@@ -23,6 +23,10 @@ module.exports =
       title: 'Scroll with output'
       type: 'boolean'
       default: true
+    stopOnRerun:
+      title: 'Stop running process on rerun'
+      type: 'boolean'
+      default: false
   scriptView: null
   scriptOptionsView: null
   scriptOptions: null
@@ -51,14 +55,14 @@ module.exports =
 
   deactivate: ->
     @runtime.destroy()
-    @scriptView.close()
+    @scriptView.removePanel()
     @scriptOptionsView.close()
     @subscriptions.dispose()
     GrammarUtils.deleteTempFiles()
 
   closeScriptViewAndStopRunner: ->
     @runtime.stop()
-    @scriptView.close()
+    @scriptView.removePanel()
 
   # Public
   #
