@@ -22,4 +22,5 @@ Todo
 - [ ] Add correct permissions for copied over files
 - [ ] Copy over oh-my-zsh so that it's easier to get started 
 - [ ] Default git settings (simple committing)
+- [ ] Use agnoster theme
 
