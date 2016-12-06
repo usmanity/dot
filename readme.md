@@ -1,4 +1,4 @@
-dot files
+About
 ---------
 
 This repo contains some settings files and a `setup.sh` file which helps
