@@ -15,3 +15,10 @@ else
 fi
 
 
+# doing this at the end because it opens the Font Book app
+# learn more about Hack here: https://github.com/chrissimpkins/Hack
+if [ -f ~/Dropbox/fonts/Hack-Regular.ttf ]
+  then
+    echo "Setting up Hack font..."
+    open ~/Dropbox/fonts/Hack-Regular.ttf
+fi
