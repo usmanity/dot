@@ -1,6 +1,6 @@
 alias gst='git status'
-alias ggpush='git push origin $(git_current_branch)'
-alias ggpull='git pull origin $(git_current_branch)'
+alias ggpush='git push origin $(git rev-parse --abbrev-ref HEAD)'
+alias ggpull='git pull origin $(git rev-parse --abbrev-ref HEAD)'
 alias ggpnp='ggpull && ggpush'
 alias woman='man'
 alias kerle='curl'
