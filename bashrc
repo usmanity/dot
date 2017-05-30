@@ -1,18 +1,10 @@
 echo "Using bash..."
 
 source ~/dot/alias
+source ~/dot/colors
 
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f /Users/muhammad/Downloads/google-cloud-sdk/path.bash.inc ]; then
-  source '/Users/muhammad/Downloads/google-cloud-sdk/path.bash.inc'
-fi
+PS1="\w ${COLOR_YELLOW}☉${COLOR_NC} "
 
-# The next line enables shell command completion for gcloud.
-if [ -f /Users/muhammad/Downloads/google-cloud-sdk/completion.bash.inc ]; then
-  source '/Users/muhammad/Downloads/google-cloud-sdk/completion.bash.inc'
-fi
-
-
-PS1="\w ☉ "
+export PATH="$HOME/.composer/vendor/bin:$PATH"
