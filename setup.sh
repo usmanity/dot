@@ -22,6 +22,12 @@ else
   ln -s bashrc ~/.bashrc
 fi
 
+if [ -f ~/.osx ]
+    then
+        echo "~/.osx exists already, skipping"
+else
+    echo "Coping osx file to ~/.osx"
+fi
 
 
 # doing this at the end because it opens the Font Book app
