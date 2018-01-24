@@ -25,6 +25,6 @@ set hlsearch                    " highlight the matches from a search
 
 nnoremap <leader>x ZZ
 
-call plug#begin('~/.vim/plugged')
-    Plug 'wakatime/vim-wakatime'
-call plug#end()
+" call plug#begin('~/.vim/plugged')
+"    Plug 'wakatime/vim-wakatime'
+" call plug#end()
