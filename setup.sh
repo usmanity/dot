@@ -16,13 +16,23 @@ else
   ln -s $current_directory/vimrc ~/.vimrc
 fi
 
-if [ -f ~/.bashrc ]
+if [ -f ~/.zshrc ]
   then
-    echo "~/.bashrc exists already, skipping"
+    echo "~/.zshrc exists already, skipping"
 else
-  echo "Copying bashrc to ~/.bashrc"
-  ln -s $current_directory/bashrc ~/.bashrc
+  echo "Setting zsh as shell default..."
+  chsh -s $(which zsh)
+  echo "Copying zshrc to ~/.zshrc"
+  ln -s $current_directory/zshrc ~/.zshrc
 fi
+
+# if [ -f ~/.bashrc ]
+#   then
+#     echo "~/.bashrc exists already, skipping"
+# else
+#   echo "Copying bashrc to ~/.bashrc"
+#   ln -s $current_directory/bashrc ~/.bashrc
+# fi
 
 if [ -f ~/.osx ]
     then
