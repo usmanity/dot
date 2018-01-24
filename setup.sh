@@ -55,3 +55,7 @@ if [ -f ~/Dropbox/fonts/Hack-Regular.ttf ]
                 open ~/Dropbox/fonts/Hack-Regular.ttf
         fi
 fi
+
+echo "-------"
+echo "Setup is done"
+echo "Don't forget to turn on cursor guides, smart cursor, and install oceanic color theme!"
