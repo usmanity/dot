@@ -26,14 +26,6 @@ else
   ln -s $current_directory/zshrc ~/.zshrc
 fi
 
-# if [ -f ~/.bashrc ]
-#   then
-#     echo "~/.bashrc exists already, skipping"
-# else
-#   echo "Copying bashrc to ~/.bashrc"
-#   ln -s $current_directory/bashrc ~/.bashrc
-# fi
-
 if [ -f ~/.osx ]
     then
         echo "~/.osx exists already, skipping"
