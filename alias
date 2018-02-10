@@ -6,3 +6,4 @@ alias woman='man'
 alias kerle='curl'
 alias commit='git commit -am'
 alias dcup='docker-compose up'
+
