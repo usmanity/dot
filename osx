@@ -1,1 +1,14 @@
+# most of these are copied from Mathias Bynens' dotfiles
+# https://github.com/mathiasbynens/dotfiles/blob/master/.macos
+
+# Enable key repeat instead of additional characters while holding down a key
 defaults write -g ApplePressAndHoldEnabled -bool false
+
+
+# Trackpad: enable tap to click for this user and for the login screen
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+
+# Speed up Mission Control animations
+defaults write com.apple.dock expose-animation-duration -float 0.1
