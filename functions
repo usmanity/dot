@@ -1,0 +1,4 @@
+gbb() {
+  git checkout batched-release-"$1"
+}
+
