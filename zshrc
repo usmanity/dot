@@ -1,8 +1,10 @@
 #
 # Executes commands at the start of an interactive session.
+# Originally put together as part of prezto for zsh, modified by usmanity
 #
 # Authors:
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
+#   Muhammad Usman <muhammad@usmanity.com>
 #
 
 # Source Prezto.
@@ -14,8 +16,9 @@ fi
 
 echo "Using zsh..."
 
-source $HOME/dot/alias
-source $HOME/dot/colors
+source ~/dot/alias
+source ~/dot/colors
+source ~/dot/functions
 
 # configs for brew packages
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
