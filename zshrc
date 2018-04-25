@@ -15,10 +15,6 @@ fi
 # Customize to your needs...
 echo "Using zsh..."
 
-source ~/dot/alias
-source ~/dot/colors
-source ~/dot/functions
-
 # configs for brew packages
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 export NVM_DIR="$HOME/.nvm"
@@ -34,3 +30,7 @@ export VISUAL=/usr/bin/less
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+
+source ~/dot/alias
+source ~/dot/colors
+source ~/dot/functions
