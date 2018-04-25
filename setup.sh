@@ -48,6 +48,8 @@ if [ -f ~/Dropbox/fonts/Hack-Regular.ttf ]
         fi
 fi
 
+source osx
+
 echo "-------"
 echo "Setup is done"
-echo "Don't forget to turn on cursor guides, smart cursor, and install oceanic color theme!"
+echo "Don't forget to turn on cursor guides and smart cursor!"
