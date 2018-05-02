@@ -2,3 +2,7 @@ gbb() {
   git checkout batched-release-"$1"
 }
 
+flex() {
+    open http://lokeshdhakar.com/projects/flexitem
+}
+
