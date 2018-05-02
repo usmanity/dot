@@ -7,13 +7,13 @@
 #   Muhammad Usman <muhammad@usmanity.com>
 #
 
+# Customize to your needs...
+echo "Using zsh..."
+
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
-
-# Customize to your needs...
-echo "Using zsh..."
 
 # configs for brew packages
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
@@ -25,12 +25,12 @@ export PATH="$HOME/.composer/vendor/bin:$PATH"
 defaults write -g InitialKeyRepeat -int 17 # normal minimum is 15 (225 ms)
 defaults write -g KeyRepeat -int 2 # normal minimum is 2 (30 ms)
 
-export EDITOR=/usr/bin/vim
-export VISUAL=/usr/bin/less
-
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 
 source ~/dot/alias
 source ~/dot/colors
 source ~/dot/functions
+
+export EDITOR=/usr/bin/vim
+export VISUAL=/usr/bin/less
