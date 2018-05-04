@@ -8,7 +8,7 @@
 #
 
 # Customize to your needs...
-echo "Using zsh..."
+echo "Using zsh 👋..."
 
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
