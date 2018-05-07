@@ -1,4 +1,5 @@
 let mapleader=","               " declare the comma to be SUPREME leader!
+set nocompatible                " turn off compatiblity with vi
 
 set paste                       " handles pasting properly
 set number                      " show line numbers
