@@ -53,5 +53,4 @@ source osx
 echo "-------"
 echo "Setup is done"
 echo "Don't forget to turn on cursor guides and smart cursor!"
-
 echo "Recommend installations using brew: autojump, exa, fd, bat, httpie, and jq or rq"
