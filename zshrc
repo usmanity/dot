@@ -22,7 +22,7 @@ fi
 export NVM_DIR="$HOME/.nvm"
 . "/usr/local/opt/nvm/nvm.sh" --no-use
 
-export PATH="$HOME/.composer/vendor/bin:$PATH"
+export PATH="$HOME/bin:$HOME/.composer/vendor/bin:$PATH"
 
 defaults write -g InitialKeyRepeat -int 17 # normal minimum is 15 (225 ms)
 defaults write -g KeyRepeat -int 2 # normal minimum is 2 (30 ms)
@@ -36,3 +36,17 @@ source ~/dot/functions
 
 export EDITOR=/usr/bin/vim
 export VISUAL=/usr/bin/less
+
+# command history related options
+setopt appendhistory
+setopt sharehistory
+setopt incappendhistory
+export PATH="/usr/local/opt/php@5.6/bin:$PATH"
+export PATH="/usr/local/opt/php@5.6/sbin:$PATH"
+export PATH="/usr/local/opt/php@7.0/bin:$PATH"
+export PATH="/usr/local/opt/php@7.0/sbin:$PATH"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export NVM_DIR="$HOME/.nvm" 
+. "/usr/local/opt/nvm/nvm.sh"

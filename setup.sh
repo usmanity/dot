@@ -34,23 +34,9 @@ else
     ln -s $current_directory/osx ~/.osx
 fi
 
-
-# doing this at the end because it opens the Font Book app
-# learn more about Hack here: https://github.com/chrissimpkins/Hack
-if [ -f ~/Dropbox/fonts/Hack-Regular.ttf ]
-    then
-        if [ -f ~/Library/Fonts/Hack-Regular.ttf ]
-            then
-                echo "Hack is already installed, skipping..."
-        else
-                echo "Setting up Hack font..."
-                open ~/Dropbox/fonts/Hack-Regular.ttf
-        fi
-fi
-
-source osx
-
 echo "-------"
 echo "Setup is done"
 echo "Don't forget to turn on cursor guides and smart cursor!"
-echo "Recommend installations using brew: autojump, exa, fd, bat, httpie, and jq or rq"
+echo "Recommend installations using brew: autojump, exa, fd, bat, httpie, ag, and jq or rq"
+echo "For installing fonts, use brew cask-font instead of manually installing fonts"
+
