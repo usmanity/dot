@@ -50,3 +50,9 @@ export PATH="/usr/local/opt/php@7.0/sbin:$PATH"
 
 export NVM_DIR="$HOME/.nvm" 
 . "/usr/local/opt/nvm/nvm.sh"
+
+
+export COMPOSER_CAFILE=/etc/ssl/cert.pem
+export PATH="/usr/local/opt/php@7.1/bin:$PATH"
+export PATH="/usr/local/opt/php@7.1/sbin:$PATH"
+export PATH="/Users/muhammad/dot/bin:$PATH"

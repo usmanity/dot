@@ -1,0 +1,8 @@
+#!/bin/bash
+
+current_branch=$(git rev-parse --abbrev-ref HEAD)
+url=$(git config --get remote.origin.url | perl -n -e'/^(http(s)?\:\\\\|git\@)(.+)\:(.+\/.+)\.git$/ && print $3 . "\/" . $4')
+open "https://${url}/compare/${1:-master}...${current_branch}"
+
+####
+# Script by https://github.com/M-Porter
