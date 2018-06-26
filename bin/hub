@@ -1,0 +1,5 @@
+#!/bin/bash
+
+url=$(git config --get remote.origin.url)
+echo ${url}
+open "${url}"
