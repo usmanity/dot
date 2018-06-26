@@ -1,5 +1,4 @@
 #!/bin/bash
 
-url=$(git config --get remote.origin.url)
-echo ${url}
-open "${url}"
+url=$(git config --get remote.origin.url | perl -n -e'/^(http(s)?\:\\\\|git\@)(.+)\:(.+\/.+)\.git$/ && print $3 . "\/" . $4')
+open "https://${url}"
