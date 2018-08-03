@@ -8,8 +8,9 @@ You can use this as an example repo to see some settings.
 
 I often like to clean up this repo so files might be unavailable at times.  
 
-Todo
-----
-- [ ] Default git settings (simple committing)
-- [ ] Add better handling of environment variables based on directory (like nvmrc)
-- [ ] Fix issues where git won't know who the author is when committing
+Credits
+-------
+
+A lot of these shortcuts were discovered from other people's dot repos and recommendations
+
+- Github aliases and shortcuts from [M-Porter](https://github.com/M-Porter)
