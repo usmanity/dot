@@ -59,5 +59,3 @@ export PATH="/Users/muhammad/dot/bin:$PATH"
 
 export GOPATH=/Users/muhammad/go
 export PATH=$GOPATH/bin:$PATH
-export PATH="/usr/local/opt/icu4c/bin:$PATH"
-export PATH="/usr/local/opt/icu4c/sbin:$PATH"
