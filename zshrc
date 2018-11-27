@@ -33,6 +33,7 @@ export PATH="$PATH:$HOME/.rvm/bin"
 source ~/dot/alias
 source ~/dot/colors
 source ~/dot/functions
+source ~/Dropbox/private-configs/local-aliases
 
 export EDITOR=/usr/bin/vim
 export VISUAL=/usr/bin/less
@@ -59,3 +60,6 @@ export PATH="/Users/muhammad/dot/bin:$PATH"
 
 export GOPATH=/Users/muhammad/go
 export PATH=$GOPATH/bin:$PATH
+
+# heroku autocomplete setup
+HEROKU_AC_ZSH_SETUP_PATH=/Users/muhammad/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
