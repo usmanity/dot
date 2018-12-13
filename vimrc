@@ -1,4 +1,4 @@
-let mapleader=","               " declare the comma to be SUPREME leader!
+let mapleader=";"               " declare the comma to be SUPREME leader!
 set nocompatible                " turn off compatiblity with vi
 
 set paste                       " handles pasting properly
@@ -25,6 +25,8 @@ set incsearch                   " search as characters are typed
 set hlsearch                    " highlight the matches from a search
 
 """""" LEADER COMMANDS """"""
+" Source vimrc
+nnoremap <Leader>vs :source ~/.vimrc<CR>:echo "Reloaded .vimrc"<CR>
 
 """""" Plugins below here """"""
 
