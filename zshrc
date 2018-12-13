@@ -12,7 +12,13 @@
 # Customize to your needs...
 
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
-  echo "On debian...no setup yet"
+  export VISUAL=vim
+  export EDITOR="$VISUAL"
+  echo "On debian...doing a basic setup"
+  source ~/dot/alias
+  source ~/dot/colors
+  source ~/dot/functions
+
 elif [[ "$OSTYPE" == "darwin"* ]]; then
   echo "Using zsh 👋...(macOS)"
   # Source Prezto.
