@@ -37,6 +37,6 @@ fi
 echo "-------"
 echo "Setup is done"
 echo "Don't forget to turn on cursor guides and smart cursor!"
-echo "Recommended installations using brew: autojump, exa, fd, bat, httpie, ag, and jq or rq"
+echo "Recommended installations using brew: autojump, exa, fzf, fd, bat, httpie, ag, and jq or rq"
 echo "For installing fonts, use brew cask-font instead of manually installing fonts"
 

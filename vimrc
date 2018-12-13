@@ -1,7 +1,7 @@
 let mapleader=","               " declare the comma to be SUPREME leader!
 set nocompatible                " turn off compatiblity with vi
 
-"set paste                       " handles pasting properly
+set paste                       " handles pasting properly
 set number                      " show line numbers
 set showcmd                     " show the current command in the bottom bar
 
@@ -24,29 +24,31 @@ set wildmenu                    " visual autocomplete for command menu
 set incsearch                   " search as characters are typed
 set hlsearch                    " highlight the matches from a search
 
+"""""" LEADER COMMANDS """"""
+
 """""" Plugins below here """"""
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
+"" set the runtime path to include Vundle and initialize
+"set rtp+=~/.vim/bundle/Vundle.vim
+"call vundle#begin()
+"" alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+"Plugin 'VundleVim/Vundle.vim'
 
 " call plug#begin('~/.vim/plugged')
 "    Plug 'wakatime/vim-wakatime'
 " call plug#end()
-Plugin 'ervandew/supertab'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
-Plugin 'kien/ctrlp.vim'
-Plugin 'altercation/vim-colors-solarized'
+"Plugin 'ervandew/supertab'
+"Plugin 'scrooloose/nerdtree'
+"Plugin 'scrooloose/syntastic'
+"Plugin 'kien/ctrlp.vim'
+"Plugin 'altercation/vim-colors-solarized'
+"
+"call vundle#end()            " required
+"filetype plugin indent on    " required
 
-call vundle#end()            " required
-filetype plugin indent on    " required
-
-map <C-n> :NERDTreeToggle<CR>
-colorscheme solarized
-set background=dark
+"map <C-n> :NERDTreeToggle<CR>
+"colorscheme solarized
+"set background=dark

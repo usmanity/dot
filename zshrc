@@ -66,4 +66,6 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
   
   export GOPATH=/Users/muhammad/go
   export PATH=$GOPATH/bin:$PATH
+  # heroku autocomplete setup
+  HEROKU_AC_ZSH_SETUP_PATH=/Users/muhammad/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
 fi
