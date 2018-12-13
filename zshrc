@@ -12,6 +12,8 @@
 # Customize to your needs...
 
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
+  export VISUAL=vim
+  export EDITOR="$VISUAL"
   echo "On debian...doing a basic setup"
   source ~/dot/alias
   source ~/dot/colors
