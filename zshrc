@@ -14,10 +14,20 @@
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
   export VISUAL=vim
   export EDITOR="$VISUAL"
-  echo "On debian...doing a basic setup"
+  echo "On a linux box..."
   source ~/dot/alias
   source ~/dot/colors
   source ~/dot/functions
+
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+  # command history related options
+  setopt appendhistory
+  setopt sharehistory
+  setopt incappendhistory
+  
+  # enable fzf key-bindings
+  [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+  . /usr/share/autojump/autojump.sh
 
 elif [[ "$OSTYPE" == "darwin"* ]]; then
   echo "Using zsh 👋...(macOS)"
@@ -71,6 +81,7 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
   # heroku autocomplete setup
   HEROKU_AC_ZSH_SETUP_PATH=/Users/muhammad/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
 fi
+
 plugins=(zsh-completions)
 autoload -U compinit && compinit
 
