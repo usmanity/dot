@@ -86,3 +86,4 @@ plugins=(zsh-completions)
 autoload -U compinit && compinit
 
 export PATH="/usr/local/opt/openssl/bin:$PATH"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
