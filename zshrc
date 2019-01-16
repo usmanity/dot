@@ -47,7 +47,7 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
   defaults write -g KeyRepeat -int 2 # normal minimum is 2 (30 ms)
   
   # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-  export PATH="$PATH:$HOME/.rvm/bin"
+  export PATH="$HOME/.rvm/bin:$PATH"
   
   source ~/dot/alias
   source ~/dot/colors
@@ -85,3 +85,4 @@ fi
 plugins=(zsh-completions)
 autoload -U compinit && compinit
 
+export PATH="/usr/local/opt/openssl/bin:$PATH"
