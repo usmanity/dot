@@ -79,7 +79,10 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
   export PATH=$GOPATH/bin:$PATH
   # heroku autocomplete setup
   HEROKU_AC_ZSH_SETUP_PATH=/Users/muhammad/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
-
+  # sets the tab title to current dir
+  precmd() {
+    echo -ne "\e]1;${PWD##*/}\a"
+  }
 fi
 
 plugins=(zsh-completions)
