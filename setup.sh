@@ -16,16 +16,18 @@ echo "Setting up symlinks..."
 current_directory=$(pwd)
 echo $current_directory
 
+echo "Skipping vimrc changes, use vim bootstrap: https://vim-bootstrap.com/"
+
 #-------------------------
-# symlinking vimrc
+# symlinking vimrc, this will be skipped now
 #-------------------------
-if [ -f ~/.vimrc ]
-  then
-    echo "~/.vimrc exists already, skipping"
-else
-  echo "Copying vimrc to ~/.vimrc"
-  ln -s $current_directory/vimrc ~/.vimrc
-fi
+#if [ -f ~/.vimrc ]
+#  then
+#    echo "~/.vimrc exists already, skipping"
+#else
+#  echo "Copying vimrc to ~/.vimrc"
+#  ln -s $current_directory/vimrc ~/.vimrc
+#fi
 
 #-------------------------
 # symlinking zshrc

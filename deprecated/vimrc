@@ -6,8 +6,8 @@ set number                      " show line numbers
 set showcmd                     " show the current command in the bottom bar
 
 set expandtab                   " convert tabs to spaces
-set tabstop=4                   " sets the visual look of the tab to be 4 spaces
-set softtabstop=4               " similar to the above but it's for inserting tabs
+set tabstop=2                  " sets the visual look of the tab to be 4 spaces
+set softtabstop=2               " similar to the above but it's for inserting tabs
 
 set backspace=2                 " fixes how backspace should work!
 
