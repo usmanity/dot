@@ -54,3 +54,6 @@ nnoremap <Leader>vs :source ~/.vimrc<CR>:echo "Reloaded .vimrc"<CR>
 "map <C-n> :NERDTreeToggle<CR>
 "colorscheme solarized
 "set background=dark
+
+"""""" fzf """"""
+set rtp+=/usr/local/opt/fzf

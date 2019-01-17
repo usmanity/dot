@@ -65,7 +65,6 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
   export PATH="/usr/local/opt/php@7.0/bin:$PATH"
   export PATH="/usr/local/opt/php@7.0/sbin:$PATH"
   
-  [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
   
   export NVM_DIR="$HOME/.nvm" 
   . "/usr/local/opt/nvm/nvm.sh"
@@ -80,6 +79,7 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
   export PATH=$GOPATH/bin:$PATH
   # heroku autocomplete setup
   HEROKU_AC_ZSH_SETUP_PATH=/Users/muhammad/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
+
 fi
 
 plugins=(zsh-completions)
@@ -87,3 +87,10 @@ autoload -U compinit && compinit
 
 export PATH="/usr/local/opt/openssl/bin:$PATH"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+if [ -f ~/.square-zshrc ]
+  then
+    source ~/.square-zshrc
+fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
