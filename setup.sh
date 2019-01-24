@@ -64,8 +64,8 @@ if [ $? == 1 ]
         echo "Homebrew is not installed"
 else
     echo "✓ Homebrew exists, installing packages"
-    brew install ag jq httpie fd autojump fzf tldr
-    echo "Installed ag, jq, httpie, fd, autojump, fzf"
+    brew install ag jq httpie fd tldr bat autojump fzf
+    echo "Installed ag, jq, httpie, fd, tldr, bat, autojump, fzf"
 fi
 
 echo "-------"

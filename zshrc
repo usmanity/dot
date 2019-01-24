@@ -97,3 +97,6 @@ if [ -f ~/.square-zshrc ]
 fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+source ~/local-only/shuttle.sh
+source ~/local-only/personal.sh
