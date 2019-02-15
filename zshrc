@@ -59,7 +59,7 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
   defaults write -g KeyRepeat -int 2 # normal minimum is 2 (30 ms)
   
   # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-  export PATH="$PATH:$HOME/.rvm/bin"
+  export PATH="$HOME/.rvm/bin:$PATH"
   
   source ~/dot/alias
   source ~/dot/colors
@@ -77,7 +77,6 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
   export PATH="/usr/local/opt/php@7.0/bin:$PATH"
   export PATH="/usr/local/opt/php@7.0/sbin:$PATH"
   
-  [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
   
   export NVM_DIR="$HOME/.nvm" 
   . "/usr/local/opt/nvm/nvm.sh"
@@ -92,9 +91,25 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
   export PATH=$GOPATH/bin:$PATH
   # heroku autocomplete setup
   HEROKU_AC_ZSH_SETUP_PATH=/Users/muhammad/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
+  # sets the tab title to current dir
+  precmd() {
+    echo -ne "\e]1;${PWD##*/}\a"
+  }
 fi
 
 plugins=(zsh-completions)
 autoload -U compinit && compinit
 
+
+export PATH="/usr/local/opt/openssl/bin:$PATH"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+if [ -f ~/.square-zshrc ]
+  then
+    source ~/.square-zshrc
+    source ~/local-only/shuttle.sh
+    source ~/local-only/personal.sh
+fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
