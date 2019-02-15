@@ -28,7 +28,19 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
   # enable fzf key-bindings
   [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
   . /usr/share/autojump/autojump.sh
+  source ~/local.sh
 
+  # check if tmux session exists
+  # if it exists, attach
+  tmux ls
+  if [ $? -eq 0 ]; then
+    $TMUX
+    if [ $? -eq 0 ]; then
+      tmux attach
+    else
+      clear
+    fi
+  fi
 elif [[ "$OSTYPE" == "darwin"* ]]; then
   echo "Using zsh 👋...(macOS)"
   # Source Prezto.
@@ -84,4 +96,5 @@ fi
 
 plugins=(zsh-completions)
 autoload -U compinit && compinit
+
 
