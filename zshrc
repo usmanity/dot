@@ -113,4 +113,6 @@ fi
 
 source ~/local-only/shuttle.sh
 source ~/local-only/personal.sh
+
+# [[ -f ~/.local-only ]] && source ~/.local-only
 PKG_CONFIG_PATH="/usr/local/opt/libarchive/lib/pkgconfig"
