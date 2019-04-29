@@ -111,8 +111,8 @@ fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-source ~/local-only/shuttle.sh
-source ~/local-only/personal.sh
+[[ -f ~/local-only/shuttle.sh  ]] && source ~/local-only/shuttle.sh
+[[ -f ~/local-only/personal.sh ]] && source ~/local-only/personal.sh
 
 # [[ -f ~/.local-only ]] && source ~/.local-only
 PKG_CONFIG_PATH="/usr/local/opt/libarchive/lib/pkgconfig"
