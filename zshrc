@@ -72,10 +72,6 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
   setopt appendhistory
   setopt sharehistory
   setopt incappendhistory
-  export PATH="/usr/local/opt/php@5.6/bin:$PATH"
-  export PATH="/usr/local/opt/php@5.6/sbin:$PATH"
-  export PATH="/usr/local/opt/php@7.0/bin:$PATH"
-  export PATH="/usr/local/opt/php@7.0/sbin:$PATH"
 
   export NVM_DIR="$HOME/.nvm" 
   . "/usr/local/opt/nvm/nvm.sh"
