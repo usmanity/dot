@@ -24,6 +24,8 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
   setopt appendhistory
   setopt sharehistory
   setopt incappendhistory
+  setopt inc_append_history
+  setopt share_history
   
   # enable fzf key-bindings
   [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -112,3 +114,4 @@ fi
 
 # [[ -f ~/.local-only ]] && source ~/.local-only
 PKG_CONFIG_PATH="/usr/local/opt/libarchive/lib/pkgconfig"
+export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
