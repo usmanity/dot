@@ -22,10 +22,9 @@
     "workbench.colorTheme": "Oceanic Next",
     "workbench.colorCustomizations": {
         "[Oceanic Next]": {
-            // "editor.background": "#2e2a1dd7",
+            // "editor.background": "#180c24a9",
             "editorWhitespace.foreground": "#3f3b3b",
-            "editorError.foreground": "#813c3c",
-            "editorError.border": "#f5f5f5"
+            "editorInfo.foreground": "#773d3d"
         },
     },
     "editor.tokenColorCustomizations": {
@@ -33,10 +32,9 @@
           "comments": {
               "foreground": "#979797"
           },
-
         }
     },
-    "editor.lightbulb.enabled": true,
+    "editor.lightbulb.enabled": false,
     "workbench.sideBar.location": "right",
     "breadcrumbs.enabled": true,
     "peacock.affectStatusBar": true,
@@ -110,4 +108,5 @@
     "files.autoSave": "onFocusChange",
     "editor.gotoLocation.multiple": "goto",
     "terminal.integrated.fontSize": 15,
+    "editor.rulers": [120]
 }
