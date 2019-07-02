@@ -41,6 +41,7 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
       clear
     fi
   fi
+  PATH="/snap/bin:$PATH"
 elif [[ "$OSTYPE" == "darwin"* ]]; then
   echo "Using zsh 👋...(macOS)"
   # Source Prezto.
