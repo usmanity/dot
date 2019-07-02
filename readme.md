@@ -21,8 +21,10 @@ Tools used
 
 Maybe you'd like to try some of the tools I install along with my dot folder setup:
 
-- [autojump `j`](https://github.com/wting/autojump) -> instead of using `cd` to go to directories I'm always moving between, autojump lets you quickly move between directories.
-- [fzf](https://github.com/junegunn/fzf) -> easy to use command history tool. Make sure to install the keyboard shortcuts.
-- [jq](https://stedolan.github.io/jq/) -> pretty prints JSON. Recently, I've also started using [jsonui](https://github.com/gulyasm/jsonui).
-- [silver search `ag`](https://github.com/ggreer/the_silver_searcher) -> quickest search program I've found. It's like grep but works better for me.
-- [fd](https://github.com/sharkdp/fd) -> similar to `find` but easier to use.
+- [autojump `j`](https://github.com/wting/autojump) → instead of using `cd` to go to directories I'm always moving between, autojump lets you quickly move between directories.
+- [fzf](https://github.com/junegunn/fzf) → easy to use command history tool. Make sure to install the keyboard shortcuts.
+- [jq](https://stedolan.github.io/jq/) → pretty prints JSON. Recently, I've also started using [jsonui](https://github.com/gulyasm/jsonui).
+- [silver search `ag`](https://github.com/ggreer/the_silver_searcher) → quickest search program I've found. It's like grep but works better for me.
+- [fd](https://github.com/sharkdp/fd) → similar to `find` but easier to use.
+- [bat](https://github.com/sharkdp/bat) → A nicer tool compared to `cat`, comes with syntax highlighting and line numbers out of the box.
+
