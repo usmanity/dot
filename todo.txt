@@ -1,5 +1,6 @@
 These are the outstanding items to do
 =====================================
 
-⃞ Install Sublime Code using brew
 ⃞ Install vim packages
+⃞ Sync VS Code settings
+⃞ Add history fix 
