@@ -24,6 +24,8 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
   setopt appendhistory
   setopt sharehistory
   setopt incappendhistory
+  setopt inc_append_history
+  setopt share_history
   
   # enable fzf key-bindings
   [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -41,7 +43,10 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
       clear
     fi
   fi
+  PATH="/snap/bin:$PATH"
+# ------ MAC OS SETUP BELOW -----------------
 elif [[ "$OSTYPE" == "darwin"* ]]; then
+
   echo "Using zsh 👋...(macOS)"
   # Source Prezto.
   if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
@@ -49,12 +54,16 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
   fi
 
   # configs for brew packages
+  # Autojump aka `j` set up below
   [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
+  # nvm setup before starting
   export NVM_DIR="$HOME/.nvm"
   . "/usr/local/opt/nvm/nvm.sh" --no-use
+  nvm use default
 
   export PATH="$HOME/bin:$HOME/.composer/vendor/bin:$PATH"
 
+  # key repeating for OSX
   defaults write -g InitialKeyRepeat -int 17 # normal minimum is 15 (225 ms)
   defaults write -g KeyRepeat -int 2 # normal minimum is 2 (30 ms)
 
@@ -69,17 +78,15 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
   export VISUAL=/usr/bin/less
 
   # command history related options
+  HISTFILE=~/.zhistory
   setopt appendhistory
   setopt sharehistory
   setopt incappendhistory
+  setopt inc_append_history
+  setopt share_history
 
   export NVM_DIR="$HOME/.nvm" 
   . "/usr/local/opt/nvm/nvm.sh"
-
-  export COMPOSER_CAFILE=/etc/ssl/cert.pem
-  export PATH="/usr/local/opt/php@7.1/bin:$PATH"
-  export PATH="/usr/local/opt/php@7.1/sbin:$PATH"
-  export PATH="/Users/muhammad/dot/bin:$PATH"
 
   export GOPATH=/Users/muhammad/go
   export PATH=$GOPATH/bin:$PATH
@@ -90,6 +97,7 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
     echo -ne "\e]1;${PWD##*/}\a"
   }
 fi
+# ---------- end of OS specific setups ---------
 
 plugins=(zsh-completions)
 autoload -U compinit && compinit
@@ -107,8 +115,5 @@ fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# [[ -f ~/local-only/shuttle.sh  ]] && source ~/local-only/shuttle.sh
-# [[ -f ~/local-only/personal.sh ]] && source ~/local-only/personal.sh
-
-# [[ -f ~/.local-only ]] && source ~/.local-only
 PKG_CONFIG_PATH="/usr/local/opt/libarchive/lib/pkgconfig"
+export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
