@@ -14,16 +14,15 @@
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
   export VISUAL=vim
   export EDITOR="$VISUAL"
-  echo "On a linux box..."
+  echo "🤔 – Linux based OS – using zsh 👻"
   source ~/dot/alias
   source ~/dot/colors
   source ~/dot/functions
 
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
   # command history related options
-  setopt appendhistory
-  setopt sharehistory
-  setopt incappendhistory
+  SAVEHIST=10000
+  HISTFILE=~/.zhistory
   setopt inc_append_history
   setopt share_history
   
@@ -47,7 +46,7 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
 # ------ MAC OS SETUP BELOW -----------------
 elif [[ "$OSTYPE" == "darwin"* ]]; then
 
-  echo "Using zsh 👋...(macOS)"
+  echo "👋 – macOS – using zsh 🦜"
   # Source Prezto.
   if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
     source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
@@ -78,10 +77,8 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
   export VISUAL=/usr/bin/less
 
   # command history related options
+  SAVEHIST=10000
   HISTFILE=~/.zhistory
-  setopt appendhistory
-  setopt sharehistory
-  setopt incappendhistory
   setopt inc_append_history
   setopt share_history
 
@@ -101,7 +98,6 @@ fi
 
 plugins=(zsh-completions)
 autoload -U compinit && compinit
-
 
 export PATH="/usr/local/opt/openssl/bin:$PATH"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
