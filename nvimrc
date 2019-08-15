@@ -8,4 +8,4 @@ endif
 
 " Theme
 syntax enable
-colorscheme OceanicNext
+" colorscheme Solarized
