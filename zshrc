@@ -1,16 +1,3 @@
-#
-# Executes commands at the start of an interactive session.
-# Originally put together as part of prezto for zsh, modified by usmanity
-#
-# Authors:
-#   Sorin Ionescu <sorin.ionescu@gmail.com>
-#
-# Modifications in this repo:
-#   Muhammad Usman <muhammad@usmanity.com>
-#
-
-# Customize to your needs...
-
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
   export VISUAL=vim
   export EDITOR="$VISUAL"
@@ -44,7 +31,7 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
     fi
   fi
   PATH="/snap/bin:$PATH"
-# ------ MAC OS SETUP BELOW -----------------
+# ------ MAC OS SETUP BELOW ------
 elif [[ "$OSTYPE" == "darwin"* ]]; then
 
   echo "Using zsh 👋...(macOS)"
@@ -117,3 +104,5 @@ fi
 
 PKG_CONFIG_PATH="/usr/local/opt/libarchive/lib/pkgconfig"
 export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
+
+eval "$(rbenv init -)"
