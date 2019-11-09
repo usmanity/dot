@@ -52,10 +52,6 @@
             "value": "#007fff"
         },
         {
-            "name": "C# Purple",
-            "value": "#68217A"
-        },
-        {
             "name": "Gatsby Purple",
             "value": "#639"
         },
@@ -130,5 +126,7 @@
             "endTime": "7:00:00"
         }
     ],
-    "terminal.external.osxExec": "iTerm.app"
+    "terminal.external.osxExec": "iTerm.app",
+    "code-runner.saveAllFilesBeforeRun": true,
+    "python.pythonPath": "python"
 }
