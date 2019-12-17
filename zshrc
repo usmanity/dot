@@ -86,7 +86,8 @@ export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
 
 eval "$(rbenv init -)"
 # ----------- command history related options
-SAVEHIST=10000
+SAVEHIST=2500
 HISTFILE=~/.zhistory
 setopt inc_append_history
 setopt share_history
+

@@ -2,6 +2,9 @@
     "editor.fontSize": 15,
     "editor.lineHeight": 25,
     "editor.fontFamily": "'SF Mono', monospace",
+
+    "editor.tabSize": 2,
+
     "files.insertFinalNewline": true,
     "window.zoomLevel": 0,
     "macros": {
@@ -19,7 +22,8 @@
     "javascript.updateImportsOnFileMove.enabled": "always",
     "terminal.integrated.fontFamily": "'SF Mono', monospace",
     "editor.renderWhitespace": "boundary",
-    "workbench.colorTheme": "Gruvbox Light (Hard)",
+    "solargraph.commandPath": "/Users/muhammad/.rvm/gems/ruby-2.4.6/bin/solargraph",
+    "workbench.colorTheme": "Oceanic Next",
     "workbench.colorCustomizations": {
         "[Oceanic Next]": {
             // "editor.background": "#180c24a9",
@@ -128,5 +132,15 @@
     ],
     "terminal.external.osxExec": "iTerm.app",
     "code-runner.saveAllFilesBeforeRun": true,
-    "python.pythonPath": "python"
+    "python.pythonPath": "python",
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "solargraph.useBundler": true,
+    "git.autofetch": true,
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[markdown]": {
+        "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+    }
 }
