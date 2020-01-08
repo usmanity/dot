@@ -23,7 +23,7 @@
     "terminal.integrated.fontFamily": "'SF Mono', monospace",
     "editor.renderWhitespace": "boundary",
     "solargraph.commandPath": "/Users/muhammad/.rvm/gems/ruby-2.4.6/bin/solargraph",
-    "workbench.colorTheme": "Oceanic Next",
+    "workbench.colorTheme": "Gruvbox Light (Hard)",
     "workbench.colorCustomizations": {
         "[Oceanic Next]": {
             // "editor.background": "#180c24a9",
