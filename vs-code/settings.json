@@ -128,5 +128,8 @@
     ],
     "terminal.external.osxExec": "iTerm.app",
     "code-runner.saveAllFilesBeforeRun": true,
-    "python.pythonPath": "python"
+    "python.pythonPath": "python",
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
 }
