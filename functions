@@ -19,3 +19,7 @@ pfi(){
 restart-sound() {
     sudo kill -9 `ps ax|grep 'coreaudio[a-z]' | awk '{print $1}'`
 }
+
+lastfm() {
+  open $(ruby lastfm.rb)
+}

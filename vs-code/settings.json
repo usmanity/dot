@@ -1,8 +1,9 @@
 {
     "editor.fontSize": 15,
-    "editor.lineHeight": 25,
-    "editor.fontFamily": "'SF Mono', monospace",
-
+    "editor.lineHeight": 28,
+    "editor.fontFamily": " 'SF Mono', monospace",
+    "editor.fontWeight": "400",
+    "editor.fontLigatures": true,
     "editor.tabSize": 2,
 
     "files.insertFinalNewline": true,
