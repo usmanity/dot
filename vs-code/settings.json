@@ -115,7 +115,13 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "files.autoSave": "onFocusChange",
-    "editor.gotoLocation.multiple": "goto",
+    "editor.gotoLocation.multipleDeclarations": "gotoAndPeek",
+    "editor.parameterHints.enabled": true,
+    // "editor.quickSuggestions": {
+    //     "other": false,
+    //     "comments": false,
+    //     "strings": false
+    // },
     "terminal.integrated.fontSize": 15,
     "editor.rulers": [120],
     "theme-timer.enable": true,
