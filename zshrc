@@ -84,10 +84,11 @@ PKG_CONFIG_PATH="/usr/local/opt/libarchive/lib/pkgconfig"
 export PATH="/usr/local/opt/openssl/bin:$PATH"
 export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
 
-if [ which rbenv &> /dev/null ]
-  then
-    eval "$(rbenv init -)"
-fi
+#if [ which rbenv &> /dev/null ]
+#  then
+#    eval "$(rbenv init -)"
+#fi
+eval "$(rbenv init -)"
 
 # ----------- command history related options
 SAVEHIST=2500
