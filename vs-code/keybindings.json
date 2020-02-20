@@ -66,5 +66,41 @@
         "key": "shift+cmd+l",
         "command": "-addCursorsAtSearchResults",
         "when": "fileMatchOrMatchFocus && searchViewletVisible"
+    },
+    {
+        "key": "cmd+l",
+        "command": "-extension.runSpecLine"
+    },
+    {
+        "key": "cmd+l",
+        "command": "-extension.runSpecLine"
+    },
+    {
+        "key": "cmd+l",
+        "command": "-extension.runSpecLine"
+    },
+    {
+        "key": "shift+cmd+r",
+        "command": "extension.runSpecLine"
+    },
+    {
+        "key": "cmd+l",
+        "command": "-extension.runSpecLine"
+    },
+    {
+        "key": "cmd+r",
+        "command": "-extension.runAllSpecFiles"
+    },
+    {
+        "key": "cmd+r cmd+r",
+        "command": "extension.runAllSpecFiles"
+    },
+    {
+        "key": "cmd+r",
+        "command": "-extension.runAllSpecFiles"
+    },
+    {
+        "key": "ctrl+l",
+        "command": "workbench.action.gotoLine"
     }
 ]
