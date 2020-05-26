@@ -29,9 +29,21 @@ current-song() {
 }
 
 now-playing() {
-  node ~/github/now-playing/local.js
+  if [[ "${DISABLE_NOW_PLAYING}" != "1" ]]
+  then
+    node ~/github/now-playing/local.js
+  fi
+}
+
+disable-now-playing() {
+  export DISABLE_NOW_PLAYING=1
+  source ~/.zshrc
 }
 
 tabtitle() {
   echo -ne $(now-playing)
+}
+
+temperature() {
+  ~/github/osx-cpu-temp/osx-cpu-temp
 }

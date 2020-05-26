@@ -1,8 +1,7 @@
 {
-    "editor.fontSize": 15,
     "editor.lineHeight": 28,
-    "editor.fontFamily": " 'SF Mono', monospace",
-    "editor.fontWeight": "400",
+    "editor.fontFamily": "'SF Mono', monospace",
+    "editor.fontWeight": "normal",
     "editor.fontLigatures": true,
     "editor.tabSize": 2,
 
@@ -24,7 +23,7 @@
     "terminal.integrated.fontFamily": "'SF Mono', monospace",
     "editor.renderWhitespace": "boundary",
     "solargraph.commandPath": "/Users/muhammad/.rvm/gems/ruby-2.4.6/bin/solargraph",
-    "workbench.colorTheme": "Oceanic Next",
+    "workbench.colorTheme": "Gruvbox Light (Medium)",
     "workbench.colorCustomizations": {
         "[Oceanic Next]": {
             // "editor.background": "#180c24a9",
@@ -37,7 +36,26 @@
           "comments": {
               "foreground": "#979797"
           },
-        }
+        },
+        "textMateRules": [
+            {
+                "name": "Comment",
+                "scope": [
+                    "comment",
+                    "comment.block",
+                    "comment.block.documentation",
+                    "comment.line",
+                    "comment.line.double-slash",
+                    "punctuation.definition.comment",
+                ],
+                "settings": {
+                    "fontStyle": "italic",
+                    "foreground": "#666",
+                    // "fontStyle": "italic underline",
+                    // "fontStyle": "italic bold underline",
+                }
+            },
+        ]
     },
     "editor.lightbulb.enabled": false,
     "workbench.sideBar.location": "right",
@@ -124,19 +142,19 @@
     // },
     "terminal.integrated.fontSize": 15,
     "editor.rulers": [120],
-    "theme-timer.enable": true,
-    "theme-timer.themes": [
-        {
-            "theme": "Gruvbox Light (Hard)",
-            "startTime": "7:00:00",
-            "endTime": "16:00:00"
-        },
-        {
-            "theme": "Oceanic Next",
-            "startTime": "16:00:00",
-            "endTime": "7:00:00"
-        }
-    ],
+    "theme-timer.enable": false,
+    // "theme-timer.themes": [
+    //     {
+    //         "theme": "Gruvbox Light (Hard)",
+    //         "startTime": "7:00:00",
+    //         "endTime": "16:00:00"
+    //     },
+    //     {
+    //         "theme": "Oceanic Next",
+    //         "startTime": "16:00:00",
+    //         "endTime": "7:00:00"
+    //     }
+    // ],
     "terminal.external.osxExec": "iTerm.app",
     "code-runner.saveAllFilesBeforeRun": true,
     "python.pythonPath": "python",
@@ -155,5 +173,10 @@
     },
     "java.configuration.checkProjectSettingsExclusions": false,
     "gitlens.views.repositories.files.layout": "list",
-    "vsnotes.defaultNotePath": "/Users/muhammad/notes"
+    "vsnotes.defaultNotePath": "/Users/muhammad/notes",
+    "editor.fontSize": 15,
+    "vscode_custom_css.imports": [
+        "file:///Users/muhammad/dot/vs-code/custom.css"
+    ],
+    "vscode_custom_css.policy": true,
 }
