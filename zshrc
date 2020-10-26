@@ -69,7 +69,7 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
  
   # heroku autocomplete setup
   HEROKU_AC_ZSH_SETUP_PATH=/Users/muhammad/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
- 
+ # eval "$(starship init zsh)" 
 fi
 # ---------- end of OS specific setups ---------
 
@@ -90,12 +90,7 @@ PKG_CONFIG_PATH="/usr/local/opt/libarchive/lib/pkgconfig"
 
 export PATH="/usr/local/opt/openssl/bin:$PATH"
 export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
-
-#if [ which rbenv &> /dev/null ]
-#  then
-#    eval "$(rbenv init -)"
-#fi
-#eval "$(rbenv init -)"
+export PATH="/Users/muhammad/.cargo/bin:$PATH"
 
 # ----------- command history related options
 SAVEHIST=2500
@@ -108,3 +103,8 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
+
+#export PATH="$HOME/.rbenv/bin:$PATH"
+#eval "$(rbenv init -)"
