@@ -18,7 +18,10 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
   # enable fzf key-bindings
   [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
   . /usr/share/autojump/autojump.sh
-  source ~/local.sh
+
+  # loads some local scripts, aliases to be used for work
+  source ~/local-only/shuttle.sh
+  source ~/local-only/personal.sh
 
   # check if tmux session exists
   # if it exists, attach
@@ -98,8 +101,6 @@ HISTFILE=~/.zhistory
 setopt inc_append_history
 setopt share_history
 
-source ~/powerlevel10k/powerlevel10k.zsh-theme
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
@@ -108,3 +109,7 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 
 #export PATH="$HOME/.rbenv/bin:$PATH"
 #eval "$(rbenv init -)"
+source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
+
+source ~/local-only/shuttle.sh
+source ~/local-only/personal.sh
