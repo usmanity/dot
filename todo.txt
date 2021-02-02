@@ -1,6 +1,5 @@
 These are the outstanding items to do
 =====================================
 
-⃞ Install neovim packages
 ⃞ Sync VS Code settings
 ⃞ Add history fix 
