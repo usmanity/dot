@@ -1,5 +1,0 @@
-These are the outstanding items to do
-=====================================
-
-⃞ Sync VS Code settings
-⃞ Add history fix 
