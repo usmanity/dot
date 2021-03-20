@@ -14,8 +14,6 @@ alias l='ls -a'
 alias ll='ls -lahg'
 alias dg='ddgr -n 5'
 alias abort='git reset --hard; git rebase --abort'
-alias v='nvim'
-alias n='nvim'
 alias jj='javascripting'
 alias dnp='disable-now-playing'
 
@@ -23,3 +21,9 @@ alias dnp='disable-now-playing'
 # suffix aliass for file extension handling
 alias -s {html,js,css,md,txt}=code
 alias -s git="git clone"
+
+# vim shortcuts
+# =============
+alias v='nvim'
+alias n='nvim'
+alias vim='nvim'
