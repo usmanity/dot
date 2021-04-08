@@ -1,89 +1,89 @@
-" ---------------------------------------- 
-" PLUGINS
-" https://github.com/junegunn/vim-plug
-" ---------------------------------------- 
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+" ----------------------------------------
+" Load Plugins/Settings
+" ----------------------------------------
+runtime! init/**.vim
+" ----------------------------------------
+"  load local vimrc
+" ----------------------------------------
+if filereadable($HOME . "/.vimrc.local")
+  source ~/.vimrc.local
 endif
-call plug#begin('~/.vim/plugged')
-" ---------------------------------------- 
-" General
-" Plug 'tpope/vim-obsession'
-Plug 'tpope/vim-unimpaired'
-" Plug 'vim-scripts/matchit.zip'
-" ---------------------------------------- 
-" TMUX integration
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'christoomey/vim-tmux-runner'
-Plug 'tmux-plugins/vim-tmux-focus-events'
-" ---------------------------------------- 
-" Searching
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-" Use the Remote Plugin version of fzf-preview https://github.com/yuki-ycino/fzf-preview.vim#remote-plugin-1
-Plug 'yuki-ycino/fzf-preview.vim', { 'branch': 'release/remote', 'do': ':UpdateRemotePlugins' }
-Plug 'ludovicchabant/vim-gutentags'
-Plug 'rizzatti/dash.vim'
-Plug 'scrooloose/nerdcommenter'
-Plug 'scrooloose/nerdtree'
-Plug 'preservim/tagbar'
-Plug 'shougo/neomru.vim'
-" ---------------------------------------- 
-" Editing
-Plug 'dense-analysis/ale'
-Plug 'godlygeek/tabular'
-Plug 'haya14busa/incsearch.vim'
-Plug 'jiangmiao/auto-pairs'
-Plug 'junegunn/vim-easy-align'
-Plug 'nathanaelkane/vim-indent-guides'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'neoclide/coc-snippets'
-Plug 'tpope/vim-surround'
-" ---------------------------------------- 
-" Git
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'idanarye/vim-merginal'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-rhubarb'
-Plug 'iberianpig/tig-explorer.vim'
-Plug 'rbgrouleff/bclose.vim'
-" ---------------------------------------- 
-" Display
-Plug 'airblade/vim-gitgutter'
-Plug 'kshenoy/vim-signature'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'junegunn/vim-peekaboo'
-" ---------------------------------------- 
-" Colorschemes
-Plug 'morhetz/gruvbox'
-Plug 'nanotech/jellybeans.vim'
-Plug 'trusktr/seti.vim'
-Plug 'duckwork/nirvana'
-Plug 'ratazzi/blackboard.vim'
-Plug 'fcpg/vim-farout'
-Plug 'chriskempson/base16-vim'
-" ---------------------------------------- 
-" Ruby/Rails
-Plug 'ecomba/vim-ruby-refactoring', { 'branch': 'main' }
-Plug 'vim-test/vim-test'
-Plug 'thoughtbot/vim-rspec'
-Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-rails'
-" ---------------------------------------- 
-" Languages
-Plug 'elzr/vim-json'
-Plug 'evanleck/vim-svelte'
-Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
-Plug 'gabrielelana/vim-markdown'
-Plug 'slim-template/vim-slim'
-Plug 'xolox/vim-misc'
-Plug 'xolox/vim-notes'
-Plug 'chrisbra/csv.vim'
-Plug 'cespare/vim-toml'
-" ---------------------------------------- 
-" Snippets
-"Plug 'sirver/ultisnips'
-call plug#end()
+
+" load local file if directory/project has one
+set exrc
+
+
+
+" ------------------ CoC set up
+"  let return key ↩ to select suggestion
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+" return selects first open
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
+
+" coc tries to format after enter
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+" use Tab completion
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+
+inoremap <silent><expr> <Tab>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<Tab>" :
+      \ coc#refresh()
+
+
+" ---------------- Mike's config below
+"  " FZFPreview Mappings
+" https://github.com/yuki-ycino/fzf-preview.vim#command
+" ----------------------------------------
+"nnoremap <silent> <leader>.  :FzfPreviewDirectoryFiles <C-r>=expand("%:h")<CR>/<CR>
+"nnoremap <silent> <Leader>,  :FzfPreviewAllBuffers<CR>
+"nnoremap <silent> <Leader>,, :FzfPreviewDirectoryFiles<CR>
+"nnoremap <silent> <Leader>,j :FzfPreviewJumps<CR>
+"nnoremap <silent> <Leader>/  :FzfPreviewBufferTags<CR>
+"nnoremap <silent> <Leader>m  :FzfPreviewProjectMruFiles<CR>
+"nnoremap <silent> <Leader>mm :FzfPreviewMruFiles<CR>
+"" FZF Mappings
+"" https://github.com/junegunn/fzf.vim#commands
+"" ----------------------------------------
+""nnoremap <silent> <Leader>,  :Files<CR>
+""nnoremap <silent> <Leader>b  :Buffers<CR>
+"nnoremap <silent> <Leader>bc :BCommits<CR>
+"
+"nnoremap <silent> <Leader>bm :Marks<CR>
+"nnoremap <silent> <Leader>c  :Commits<CR>
+"nnoremap <silent> <Leader>g  :GFiles?<CR>
+"nnoremap <silent> <Leader>m  :History<CR>
+nnoremap <Leader>r           :Rg <C-R><C-W><CR>
+nnoremap <Leader>rg          :Rg<Space>
+nnoremap <Leader>!           :Rg!<Space>
+"
+"" only list current directory
+"let g:fzf_mru_relative = 1
+"
+"function! s:build_quickfix_list(lines)
+"  call setqflist(map(copy(a:lines), '{ "filename": v:val }'))
+"  copen
+"  cc
+"endfunction
+"
+"function! RipgrepFzf(query, fullscreen)
+"  let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case -- %s || --preview "bat --color=always --style=header,grid --line-range :300 {}"'
+"  let initial_command = printf(command_fmt, shellescape(a:query))
+"  let reload_command = printf(command_fmt, '{q}')
+"  let spec = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
+"  call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
+"endfunction
+"
+"" Use RG for FZF
+"command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
+"let g:fzf_action = {
+"  \ 'ctrl-q': function('s:build_quickfix_list'),
+"  \ 'ctrl-t': 'tab split',
+"  \ 'ctrl-x': 'split',
+"  \ 'ctrl-v': 'vsplit' }
+"let $FZF_DEFAULT_OPTS = '--ansi --bind ctrl-a:select-all'

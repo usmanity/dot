@@ -1,2 +1,5 @@
 atom/compile-cache/
 .DS_Store
+nvim/Session.vim
+nvim/.netrwhist
+nvim/node_modules
