@@ -23,6 +23,8 @@ run '~/.tmux/plugins/tpm/tpm'
 # disable weather
 set -g @dracula-show-weather false
 set -g @dracula-show-location false
+# disable battery
+set -g @dracula-show-battery false
 
 # ---------------- Keybindings (might move these out to a different file)
 unbind C-b
@@ -30,3 +32,7 @@ set-option -g prefix C-j
 
 # mouse scrolling
 set -g mouse on
+
+# start window and pane numbering at 1
+set -g base-index 1
+setw -g pane-base-index 1

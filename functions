@@ -47,3 +47,13 @@ tabtitle() {
 temperature() {
   ~/github/osx-cpu-temp/osx-cpu-temp
 }
+
+start () {
+        create_if_needed_and_attach
+}
+create_if_needed_and_attach () {
+        if not_in_tmux
+        then
+                tmux new-session -As "$session_name"
+        fi
+}

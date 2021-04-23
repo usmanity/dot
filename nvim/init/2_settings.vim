@@ -5,6 +5,10 @@ set clipboard=unnamed
 
 " keep buffers around without saving
 set hidden
+" save buffers on change, not sure how this affects hidden above
+set autowriteall
+" attempt to save on focus lost
+" autocmd CursorHold,CursorHoldI * update
 
 " line numbers etc
 set relativenumber
@@ -29,3 +33,6 @@ set signcolumn=yes
 
 " document formatting, e.g. tabs etc
 set tabstop=4 softtabstop=4
+
+
+" THEME

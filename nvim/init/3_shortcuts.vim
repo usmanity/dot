@@ -1,11 +1,11 @@
 " ---- keyboard shortcuts ----
 " quickly edit config file
-nnoremap <silent> <leader>ec :e $MYVIMRC<CR>
+nnoremap <silent> <leader>ec :e ~/dot/nvim/init<CR>
 " quickly edit plugins file
 nnoremap <silent> <leader>ep :e ~/.config/nvim/init/0_plugins.vim<CR>
 
 " source config file
-nnoremap <silent> <leader>sc :source $MYVIMRC<CR>
+nnoremap <silent> <leader>so :source $MYVIMRC<CR>
 
 nnoremap <silent> <leader>,j :FzfPreviewJumps<CR>
 nnoremap <silent> <leader>,  :FzfPreviewAllBuffers<CR>
@@ -16,3 +16,9 @@ nnoremap <silent> <leader>o :Files<CR>
 
 " use jj to escape
 inoremap jj <esc>
+
+" use leader + w to save
+nnoremap <leader>w :write<CR>
+
+" open NerdTree
+nnoremap <leader>b :NERDTree<CR>
