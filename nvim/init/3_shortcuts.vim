@@ -22,3 +22,8 @@ nnoremap <leader>w :write<CR>
 
 " open NerdTree
 nnoremap <leader>b :NERDTree<CR>
+
+" focus mode, uses option + f on mac
+nnoremap <silent> ƒ :Goyo<CR>
+" focused without limelight
+nnoremap <silent> Ï :Limelight!<CR>
