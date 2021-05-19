@@ -15,7 +15,22 @@ Plug 'preservim/nerdtree'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-test/vim-test'
 
+" indentation plugins
+Plug 'Yggdroot/indentLine'
+Plug 'lukas-reineke/indent-blankline.nvim', { 'branch': 'lua'}
+
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+
+" Themes
+Plug 'morhetz/gruvbox'
+
+" tmux & vim pane switching
+Plug 'christoomey/vim-tmux-navigator'
 
 " Initialize plugin system
 call plug#end()

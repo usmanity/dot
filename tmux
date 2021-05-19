@@ -2,12 +2,13 @@
 # --- Plugins ---
 # ---------------
 set -g @plugin 'tmux-plugins/tpm'
-set -g @plugin 'tmux-plugins/tmux-continuum'
 #set -g @plugin 'tmux-plugins/tmux-copycat'
 #set -g @plugin 'tmux-plugins/tmux-open'
+set -g @plugin 'tmux-plugins/tmux-continuum'
 set -g @plugin 'tmux-plugins/tmux-resurrect'
 set -g @plugin 'christoomey/vim-tmux-navigator'
 set -g @plugin 'dracula/tmux'
+set -g @plugin 'tmux-plugins/tmux-yank'
 
 # --------------- TMUX Resurrect
 # Last saved environment is automatically restored when tmux is started.
@@ -16,6 +17,7 @@ run-shell '~/.tmux/plugins/tmux-resurrect/resurrect.tmux'
 run-shell '~/.tmux/plugins/tmux-continuum/continuum.tmux'
 set -g @continuum-restore 'on'
 set -g @continuum-save-interval '60' # hourly
+set -g @continuum-boot-options 'iterm,fullscreen'
 # Run all plugins' scripts
 run '~/.tmux/plugins/tpm/tpm'
 

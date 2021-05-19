@@ -33,12 +33,16 @@ set signcolumn=yes
 
 " document formatting, e.g. tabs etc
 set tabstop=4 softtabstop=4
-
+" indentation
+let g:indentLine_char = '│'
+let g:indentLine_color_term = 111
 
 " THEME
+colorscheme gruvbox
 " limelight settings
 let g:limelight_conceal_ctermfg = 'gray'
 let g:limelight_conceal_ctermfg = 240
+
 
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
