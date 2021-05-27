@@ -16,15 +16,16 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-test/vim-test'
 
 " indentation plugins
-Plug 'Yggdroot/indentLine'
 Plug 'lukas-reineke/indent-blankline.nvim', { 'branch': 'lua'}
 
-Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+
+" commenting in code
+Plug 'tomtom/tcomment_vim'
 
 " Themes
 Plug 'morhetz/gruvbox'

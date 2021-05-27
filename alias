@@ -2,7 +2,7 @@ alias gst='git status'
 alias ggpush='git push origin $(git rev-parse --abbrev-ref HEAD)'
 alias ggpull='git pull origin $(git rev-parse --abbrev-ref HEAD)'
 alias ggpnp='ggpull && ggpush'
-alias gco='git checkout'
+alias gco="git for-each-ref --format='%(refname:short)' refs/heads | fzf | xargs git checkout"
 alias gb='git branch'
 alias commit='git commit -am'
 alias nrw='npm run watch'
@@ -27,3 +27,8 @@ alias -s git="git clone"
 alias v='nvim'
 alias n='nvim'
 alias vim='nvim'
+
+# tmux session aliases
+alias loc='tmux attach -t localizer'
+alias leaf='tmux attach -t treefingers'
+alias shh='tmux attach -t shuttle'

@@ -38,3 +38,9 @@ set -g mouse on
 # start window and pane numbering at 1
 set -g base-index 1
 setw -g pane-base-index 1
+
+# vim and tmux pane switching
+set -g @plugin 'christoomey/vim-tmux-navigator'
+# Fig Tmux Integration: Enabled
+source-file ~/.fig/tmux
+# End of Fig Tmux Integration

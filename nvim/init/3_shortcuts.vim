@@ -37,3 +37,7 @@ nnoremap <silent> <leader>;; <cmd>only<CR>
 nnoremap <silent> ƒ :Goyo<CR>
 " focused without limelight
 nnoremap <silent> Ï :Limelight!<CR>
+
+" vim / tmux pane switching shortcuts
+" let g:tmux_navigator_no_mappings = 1
+" nnoremap <silent> <leader><c-h> :TmuxNavigateLeft<cr>

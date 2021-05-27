@@ -1,0 +1,6 @@
+{
+		"solargraph.formatting": true,
+		"solargraph.autoformat": true,
+		"solargraph.diagnostics": true,
+		"solargraph.folding": true
+}

@@ -46,3 +46,7 @@ let g:limelight_conceal_ctermfg = 240
 
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
+
+" always load local vimrc
+set exrc
+set secure
